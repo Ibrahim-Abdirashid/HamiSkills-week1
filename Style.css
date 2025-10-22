@@ -192,7 +192,7 @@ nav ul li a:hover{
 
 
 .product1{
-     background-color: rgba(255, 255, 255, 0.3);
+     background-color: rgba(255, 255, 255, 0.1);
      border-radius: 1rem;
      display: flex;
      flex-direction: column;
@@ -201,7 +201,7 @@ nav ul li a:hover{
 
 }
 .product1:hover{
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     transition: background-color 0.5s ease-in-out;
     backdrop-filter: blur(50px);
 
@@ -254,7 +254,48 @@ nav ul li a:hover{
 }
 
 
+/* testmonial */
+#testimonial{
+    margin-block: 10rem;
+}
+.testimonial{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 
+}
+.testimonial-content{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 1rem;
+
+}
+.testimonial-content:nth-child(1){
+    background-color: #f65005;
+    border-radius: .2rem;
+    padding: 1rem;
+    color: white;
+}
+.testimonial-content:nth-child(2){
+    background-color: #fff;
+    border-radius: .2rem;
+    padding: 1rem;
+     
+}
+.testimonial-content:nth-child(3){
+    background-color: #3cb815;
+    border-radius: .2rem;
+    padding: 1rem;
+    color: white;
+   
+}
+
+
+.testimonial-img img{
+    width: 20%;
+    border-radius: 100%;
+}
 
 /* key frame-ka hero */
 @keyframes move {
@@ -340,6 +381,16 @@ nav ul li a:hover{
         width: 400px;
         /* height: 150px; */
     }
+    /* testimonial */
+    .testimonial{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .testimonial-content p{
+        /* width: 70%; */
+    }
 
 
 }
@@ -392,4 +443,14 @@ nav ul li a:hover{
         width: 500px;
         /* height: 150px; */
     }
+    /* testimonial */
+    .testimonial{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+
+
 }
