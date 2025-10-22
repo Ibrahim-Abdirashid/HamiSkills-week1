@@ -186,7 +186,7 @@ nav ul li a:hover{
     text-align: center;
     animation: fadeInUp 1s ease-in-out;
     animation-timeline: view();
-    animation-range: entry 10% cover 40%;
+    animation-range: entry 0% cover 40%;
 
 }
 
@@ -274,7 +274,7 @@ nav ul li a:hover{
 /* keyframe-ka productska */
 @keyframes fadeInUp {
   from {
-     transform: translateX(100%);
+     transform: translateX(50%);
         opacity: 0;
         transition: all 1s;
   }
