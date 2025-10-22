@@ -44,8 +44,8 @@ nav ul{
 nav ul li a{
     font-size: 1.2rem;
     text-decoration: none;
-    color: #3cb815;
-    font-weight: 600;
+    color: #ffffff;
+    font-weight: 300;
 }
 nav ul li a:hover{
     color: #f65005;
@@ -223,7 +223,7 @@ nav ul li a:hover{
     color: #3cb815;
     margin-bottom: 1rem;
 }
-.product1 h2{
+.product1-content h2{
     font-size: 1rem;
     color: #ffffff;
     text-align: center;
@@ -242,17 +242,15 @@ nav ul li a:hover{
     height: 200px;
     border-radius: 1rem;
 }
-.products-container div h2{
-    font-size: 1.5rem;
-    color: #ffffff;
-}
-.products-container div p{
+
+.product1-content p{
     font-size: 1rem;
     color: rgb(255, 255, 255);
 }
-.products-container div span{
+.product1 span{
     font-size: 1.2rem;
     color: #ffffff;
+    font-weight: 500;
 }
 
 
