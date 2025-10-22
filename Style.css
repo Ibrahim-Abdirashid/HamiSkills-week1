@@ -30,6 +30,12 @@ header h1{
     color: #3cb815;
     font-size: 1.5rem;
 }
+.humburger{
+    display: none;
+}
+.mobile-menu{
+    display: none;
+}
 .logo{
     color: #f65005;
 }
@@ -538,6 +544,73 @@ nav ul li a:hover{
     .footer{
         padding: 2rem;
     }
+    /* desktop menu */
+    .desktop-menu{
+        display: none;
+    }
+    header{
+       height:  20vh;
+    }
+    header h1{
+        display: none;
+    }
+    /* mobile menu */
+    i{
+    z-index: 1111;
+  }
+  .humburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #5f6ad4;
+    color: #fff;
+    top: 5%;
+    right: 5%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1.8rem;
+  }
+  .mopile-menu {
+    display: flex;
+    justify-content: center;
+        background-color: rgba(116, 78, 240, .5);
+
+    position: fixed;
+    inset: 0 0 0 0;
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in-out;
+
+  }
+  .mopile-menu[data-visible="false"] {
+    transform: translateX(100%);
+    }
+    .humburger i[data-visible="true"]{
+    display: block;
+    }
+
+    .humburger i[data-visible="false"]{
+    display: none;
+    }
+    .mopile-menu  {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+  .mopile-menu  ul {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+  }
+  .mopile-menu  ul a {
+    color: #fff;
+  }
+ 
 
 
 }
