@@ -1,18 +1,23 @@
-const humburger = document.querySelector(".humburger");
-const mobileMenu = document.querySelector(".mopile-menu");
-const icons = document.querySelectorAll("i");
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
+    const links = document.querySelectorAll('.nav-links li a'); // Doorashada dhammaan link-iyada
 
-humburger.addEventListener("click", function (event) {
-  const isVisible = mobileMenu.getAttribute("data-visible");
-  if (isVisible == "true") {
-    // qari hiding
-    mobileMenu.setAttribute("data-visible", "false");
-    icons[0].setAttribute("data-visible", "true");
-    icons[1].setAttribute("data-visible", "false");
-  } else if (isVisible == "false") {
-    // soo bandhig showing
-    mobileMenu.setAttribute("data-visible", "true");
-    icons[0].setAttribute("data-visible", "false");
-    icons[1].setAttribute("data-visible", "true");
-  }
+    // Event listener-ka hamburger-ka
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        body.classList.toggle('no-scroll');
+    });
+
+    // Event listener-ka link-iyada
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            // Ka saar 'active' class-ka si uu menu-gu u xirmo
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.classList.remove('no-scroll');
+        });
+    });
 });

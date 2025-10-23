@@ -9,6 +9,7 @@ body{
   font-family: "Poppins", sans-serif;
   background: linear-gradient( 100deg, #5423f4, #f65005 );
     position: relative;
+    overflow-x: hidden;
 }
 img{
     max-width: 100%;
@@ -30,11 +31,50 @@ header h1{
     color: #3cb815;
     font-size: 1.5rem;
 }
-.humburger{
-    display: none;
+.nav-links {
+    list-style: none;
+    display: flex;
 }
-.mobile-menu{
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #575757;
+}
+.hamburger {
     display: none;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Active state for hamburger and menu */
+.hamburger.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-links.active {
+    transform: translateX(0);
 }
 .logo{
     color: #f65005;
@@ -460,6 +500,9 @@ nav ul li a:hover{
 /* responsive */
 
 @media(max-width:1200px){
+    body{
+        /* overflow: hidden; */
+    }
     #hero{
         grid-template-columns: 1fr;
     }
@@ -519,9 +562,7 @@ nav ul li a:hover{
         gap: 2rem;
         padding: 2rem;
     }
-    .testimonial-content p{
-        /* width: 70%; */
-    }
+    
     .testimonial h1{
      margin-bottom: 3rem;
     /* color linear-gradient */
@@ -545,20 +586,45 @@ nav ul li a:hover{
         padding: 2rem;
     }
     /* desktop menu */
-    .desktop-menu{
-        display: none;
-    }
     header{
-       height:  20vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
     header h1{
-        display: none;
+       display: none;
     }
+    
     /* mobile menu */
-    i{
-    z-index: 1111;
-  }
-  .humburger {
+      .nav-links  {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* width: 100%; */
+        position: fixed;
+        inset: 100% 0 0 0;
+        background-color: #5423f4;
+        text-align: center;
+        transform: translateX(510%);
+        transition: transform 0.3s ease-in-out;
+        height: 100vh;
+        z-index: 1000;
+    }
+    
+    
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+    .nav-links li a{
+                color: black;
+
+    }
+
+    .hamburger {
+        display: block; 
+    }
+      /* .humburger {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -571,47 +637,7 @@ nav ul li a:hover{
     height: 3rem;
     border-radius: 50%;
     font-size: 1.8rem;
-  }
-  .mopile-menu {
-    display: flex;
-    justify-content: center;
-        background-color: rgba(116, 78, 240, .5);
-
-    position: fixed;
-    inset: 0 0 0 0;
-    transform: translateX(0%);
-    transition: transform 0.5s ease-in-out;
-
-  }
-  .mopile-menu[data-visible="false"] {
-    transform: translateX(100%);
-    }
-    .humburger i[data-visible="true"]{
-    display: block;
-    }
-
-    .humburger i[data-visible="false"]{
-    display: none;
-    }
-    .mopile-menu  {
-    margin-top: 5rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-  }
-  .mopile-menu  ul {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-  }
-  .mopile-menu  ul a {
-    color: #fff;
-  }
- 
-
+  } */
 
 }
 
@@ -674,9 +700,7 @@ nav ul li a:hover{
         gap: 2rem;
         padding: 2rem;
     }
-    .testimonial-content p{
-        /* width: 70%; */
-    }
+   
     /* form */
     .contact form{
     display: flex;
@@ -694,7 +718,5 @@ nav ul li a:hover{
     gap: 3rem;
     padding: 2rem;
 }
-
-
 
 }
