@@ -501,7 +501,7 @@ nav ul li a:hover{
 
 @media(max-width:1200px){
     body{
-        /* overflow: hidden; */
+        overflow-x: hidden;
     }
     #hero{
         grid-template-columns: 1fr;
