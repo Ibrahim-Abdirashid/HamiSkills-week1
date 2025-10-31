@@ -507,7 +507,7 @@ nav ul li a:hover{
     body{
         overflow-x: hidden;
     }
-    #hero{
+    .hero{
         grid-template-columns: 1fr;
     }
      .hero-content h1{
@@ -644,7 +644,7 @@ nav ul li a:hover{
 
 @media(max-width:500px){
     
-    #hero{
+    .hero{
         display: flex;
         justify-content: center;
         align-items: center;
