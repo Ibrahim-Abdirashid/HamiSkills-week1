@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimarket Products</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .buton-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5rem;
+            margin-top: 5rem;
+            flex-wrap: wrap; /* Ku dar si ay ula qabsato cabbirrada yaryar */
+        }
+        input{
+            width: 50%;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 1rem;
+            border: none;
+            margin-right: 10px; /* Ku dar si uu u kala fogaado badhamada */
+        }
+        .filters button{
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            margin: 5px; /* Ku dar si ay u kala fogaadaan badhamada */
+        }
+        .filters button.active{
+            background-color: #333;
+            color: #fff;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ku saxay si ay ula qabsato shaashadaha kala duwan */
+            gap: 20px;
+            padding: 20px;
+            
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-info h3 {
+            margin: 0 0 5px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .product-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .product-prices {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            margin-top: 10px;
+        }
+        .product-old-price {
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+        .product-current-price {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="logo">Hami</span> Minimarket</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <div class="buton-container">
+        <!-- Search Input -->
+        <input type="text" id="search-input" placeholder="halkan ku qor maga product-ga sida gaarka u raadineysid...">
+        <div class="filters">
+            <button data-category="all" class="active">Dhammaan</button>
+            <button data-category="Fruits">Fruits</button>
+            <button data-category="Vegetables">Vegetables</button>
+        </div>
+    </div>
+
+    <div id="product-list" class="product-grid"></div>
+
+     <section id="footer">
+        <div class="footer container">
+            <div class="logoend">
+                <h1>Hamiskills</h1>
+                <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            <!-- address -->
+             <div class="address">
+                 <h2>Address</h2>
+                 <p>123 Hodan, Mogadisho Somalia</p>
+                 <p>Email: info@example.com</p>
+                 <p>Phone: +252 63-4924649</p>
+
+             </div>
+             <!-- links -->
+             <div class="links">
+                 <h3>Quick Links</h3>
+                 <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about.html">About</a></li>
+                     <li><a href="products.html">Products</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                 </ul>
+             </div>
+        </div>
+       </section>
+
+
+
+    
+    <script src="main.js"></script>
+</body>
+</html>

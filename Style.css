@@ -105,12 +105,13 @@ nav ul li a:hover{
     max-width: 1200px;
     margin-inline: auto;
 }
-#hero{
+.hero{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-block: 10rem;
     gap: 3rem;
-         animation: move 1s ease-in-out;
+     animation: move 1s ease-in-out;
+     /* height: 100vh; */
 
 }
 .hero-img img{
@@ -235,6 +236,7 @@ nav ul li a:hover{
     animation: fadeInUp .6s ease-in-out;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
+    margin-block: 5rem;
 
 }
 
