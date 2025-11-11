@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
     
 
-
 import { renderProduct } from './product.js';
-import { addToCart, loadCart, removeFromCart } from './cart.js';
+import { addToCart, loadCart, removeFromCart, cart } from './cart.js'; // Import cart array-ga
 import { renderCart, updateCartCount } from './storage.js';
 
 // Load products from the array
-  const products = [
+const products = [
+    // ... (Products array is unchanged)
     { 
         name: 'Tomato', 
         category: 'Vegetables', 
@@ -84,15 +84,14 @@ import { renderCart, updateCartCount } from './storage.js';
         image: 'images/Apple.jpg', 
         price: 11.00 
     },
- 
 ];
 
 let activeCategory = 'all';
-const cart = loadCart();
+loadCart(); // Kaliya wac loadCart si uu u buuxiyo cart array-ga la export-gareeyay
 
 document.getElementById('cart-button').addEventListener('click', () => {
     document.getElementById('cart-modal').classList.toggle('show');
-    renderCart(cart);
+    renderCart(); // Hadda uma baahnid in la soo dhiibo cart
 });
 
 const searchInput = document.getElementById('search-input');
@@ -133,5 +132,3 @@ searchInput.addEventListener('keyup', filterAndRender);
 
 // Initial render
 filterAndRender();
-
-   

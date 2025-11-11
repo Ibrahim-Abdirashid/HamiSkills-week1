@@ -1,15 +1,17 @@
+import { removeFromCart, cart } from './cart.js'; // Import cart iyo removeFromCart
+
 export const updateCartCount = (count) => {
     document.getElementById('cart-count').textContent = count;
 };
 
-export const renderCart = (cart) => {
+export const renderCart = () => { // Maadaama aan ka import-gareynay cart-ka, uma baahnin in loo soo dhiibo
     const cartItemsDiv = document.getElementById('cart-items');
     const cartTotalDiv = document.getElementById('cart-total');
     
-    cartItemsDiv.innerHTML = '';  // Clear any existing cart items
+    cartItemsDiv.innerHTML = ''; 	// Nadiifi wixii jiray
     let total = 0;
     
-    // Render cart items
+    // Soo bandhig cart items-ka
     cart.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.className = 'cart-item';
@@ -22,14 +24,14 @@ export const renderCart = (cart) => {
         total += item.price * item.quantity;
     });
     
-    cartTotalDiv.textContent = total.toFixed(2);  // Update total price
+    cartTotalDiv.textContent = total.toFixed(2); // Cusbooneysii wadarta
 
-    // Add event listeners to the "Remove" buttons
+    // Ku dar event listeners badhamada "Remove"
     document.querySelectorAll('.remove-item').forEach(button => {
         button.addEventListener('click', () => {
-            const productName = button.getAttribute('data-product-name');  // Get product name from button data
-            removeFromCart(productName);  // Call removeFromCart to remove the product
-            renderCart(cart);  // Re-render the cart modal to reflect the changes
+            const productName = button.getAttribute('data-product-name'); 
+            removeFromCart(productName); 	// Wac removeFromCart 
+            renderCart(); 					// Dib u shaqee cart-ka si uu isbeddelka u muujiyo
         });
     });
 };

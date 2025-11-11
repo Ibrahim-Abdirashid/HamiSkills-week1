@@ -1,6 +1,7 @@
 import { updateCartCount } from './storage.js';
 
-const cart = [];
+// Ka dhig cart-ka mid la export-gareyn karo si storage.js uu ula shaqeeyo
+export const cart = [];
 
 export const addToCart = (product) => {
     const existingProduct = cart.find(item => item.name === product.name);
@@ -16,12 +17,20 @@ export const addToCart = (product) => {
 };
 
 export const removeFromCart = (productName) => {
-    // Find the product in the cart and remove it
+    // Hel index-ka badeecada
     const index = cart.findIndex(item => item.name === productName);
+    
     if (index !== -1) {
-        cart.splice(index, 1);  // Remove the product from the cart array
-        saveCart();  // Save the updated cart to localStorage
-        updateCartCount(cart.length);  // Update the cart count in the navbar
+        // Haddi badeecadu ka badan tahay 1, hal ka dhim
+        if (cart[index].quantity > 1) {
+            cart[index].quantity -= 1;
+        } else {
+            // Haddi ay tahay hal kaliya, ka saar gebi ahaan
+            cart.splice(index, 1);
+        }
+        
+        saveCart();
+        updateCartCount(cart.length);
     }
 };
 
@@ -31,7 +40,8 @@ export const saveCart = () => {
 
 export const loadCart = () => {
     const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    savedCart.forEach(product => cart.push(product));
-    updateCartCount(savedCart.length);
-    return savedCart;
+    // Buuxi cart-ka la export-gareeyay si loo wada isticmaalo
+    cart.splice(0, cart.length, ...savedCart); 
+    updateCartCount(cart.length);
+    return cart; // Soo celi cart-ka la buuxiyay
 };
