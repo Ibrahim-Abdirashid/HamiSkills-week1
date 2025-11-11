@@ -18,14 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.remove('no-scroll');
         });
     });
+})
+    
 
-    // Qaybta filter-ka products-ka
-    const searchInput = document.getElementById('search-input');
-    const productListDiv = document.getElementById('product-list');
-    const filterButtons = document.querySelectorAll('.filters button');
 
-    // Xogta products-ka ee la saxay
-   const products = [
+import { renderProduct } from './product.js';
+import { addToCart, loadCart, removeFromCart } from './cart.js';
+import { renderCart, updateCartCount } from './storage.js';
+
+// Load products from the array
+  const products = [
     { 
         name: 'Tomato', 
         category: 'Vegetables', 
@@ -85,63 +87,51 @@ document.addEventListener('DOMContentLoaded', () => {
  
 ];
 
-    let activeCategory = 'all';
+let activeCategory = 'all';
+const cart = loadCart();
 
-    function renderProducts(filteredProducts) {
+document.getElementById('cart-button').addEventListener('click', () => {
+    document.getElementById('cart-modal').classList.toggle('show');
+    renderCart(cart);
+});
+
+const searchInput = document.getElementById('search-input');
+const productListDiv = document.getElementById('product-list');
+const filterButtons = document.querySelectorAll('.filters button');
+
+// Render products based on search and filter
+const filterAndRender = () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filtered = products.filter(product => {
+        const categoryMatches = (activeCategory === 'all' || product.category.toLowerCase() === activeCategory.toLowerCase());
+        const nameMatches = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+        return categoryMatches && nameMatches;
+    });
     productListDiv.innerHTML = '';
-    
-    if (filteredProducts.length === 0) {
-        productListDiv.innerHTML = '<p>Wax product ah lama helin.</p>';
-        return;
-    }
-    
-    filteredProducts.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.className = 'product-card';
-        
-        productElement.innerHTML = `
-            <div class="product-image">
-                <img src="${product.image}" alt="${product.name}">
-            </div>
-            <div class="product-info">
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <div class="product-prices">
-                    <span class="product-current-price">$${product.price.toFixed(2)}</span>
-                </div>
-            </div>
-        `;
-        
+    filtered.forEach(product => {
+        const productElement = renderProduct(product);
+        productElement.querySelector('.add-to-cart').addEventListener('click', () => {
+            addToCart(product);
+            alert(`${product.name} added to cart!`);
+        });
         productListDiv.appendChild(productElement);
     });
-}
+};
 
-
-    function filterAndRender() {
-        const searchTerm = searchInput.value.toLowerCase();
-        
-        const filtered = products.filter(product => {
-            const categoryMatches = (activeCategory === 'all' || product.category.toLowerCase() === activeCategory.toLowerCase());
-            const nameMatches = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-            
-            return categoryMatches && nameMatches;
-        });
-        
-        renderProducts(filtered);
-    }
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            activeCategory = button.dataset.category.toLowerCase();
-            filterAndRender();
-        });
-    });
-
-    searchInput.addEventListener('keyup', () => {
+// Handle filter changes
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        activeCategory = button.dataset.category.toLowerCase();
         filterAndRender();
     });
-
-    filterAndRender();
 });
+
+// Search functionality
+searchInput.addEventListener('keyup', filterAndRender);
+
+// Initial render
+filterAndRender();
+
+   

@@ -6,7 +6,35 @@
     <title>Minimarket Products</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .buton-container{
+        /* Your existing styles, plus new cart modal styles */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: white;
+            width: 400px;
+            height: 100%;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            z-index: 1000;
+        }
+        .cart-modal.show {
+            display: block;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .cart-item button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+         .buton-container{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -92,6 +120,21 @@
             font-weight: bold;
             color: #333;
         }
+        .add-to-cart{
+            padding: 7px;
+            border: none;
+            margin-top: 20px;
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+        }
+        #cart-button{
+            background-color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 1rem;
+            font-size: 1.2rem;
+        }
 
         @media(max-width:768px){
             .buton-container{
@@ -120,13 +163,16 @@
             <div class="line"></div>
             <div class="line"></div>
         </div>
+        <!-- Cart button with counter -->
+        <button id="cart-button">
+            Cart (<span id="cart-count">0</span>)
+        </button>
     </header>
 
     <div class="buton-container">
-        <!-- Search Input -->
-        <input type="text" id="search-input" placeholder="halkan ku qor magaca product-ga sida gaarka u raadineysid...">
+        <input type="text" id="search-input" placeholder="Search for products...">
         <div class="filters">
-            <button data-category="all" class="active">Dhammaan</button>
+            <button data-category="all" class="active">All</button>
             <button data-category="Fruits">Fruits</button>
             <button data-category="Vegetables">Vegetables</button>
         </div>
@@ -134,42 +180,15 @@
 
     <div id="product-list" class="product-grid"></div>
 
-     <section id="footer">
-        <div class="footer container">
-            <div class="logoend">
-                <h1>Hamiskills</h1>
-                <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita</p>
-                <div class="social-links">
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                </div>
-            </div>
-            <!-- address -->
-             <div class="address">
-                 <h2>Address</h2>
-                 <p>123 Hodan, Mogadisho Somalia</p>
-                 <p>Email: info@example.com</p>
-                 <p>Phone: +252 63-4924649</p>
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <button id="checkout-button">Checkout</button>
+    </div>
+   
 
-             </div>
-             <!-- links -->
-             <div class="links">
-                 <h3>Quick Links</h3>
-                 <ul>
-                     <li><a href="index.html">Home</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="products.html">Products</a></li>
-                     <li><a href="contact.html">Contact</a></li>
-                 </ul>
-             </div>
-        </div>
-       </section>
-
-
-
-    
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
