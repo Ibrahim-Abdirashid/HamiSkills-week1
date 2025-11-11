@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimarket Products</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Your existing styles, plus new cart modal styles */
         .cart-modal {
@@ -135,6 +136,10 @@
             border-radius: 1rem;
             font-size: 1.2rem;
         }
+        i{
+            color: indigo;
+            font-size: 2rem;
+        }
 
         @media(max-width:768px){
             .buton-container{
@@ -165,7 +170,7 @@
         </div>
         <!-- Cart button with counter -->
         <button id="cart-button">
-            Cart (<span id="cart-count">0</span>)
+            <i class="fa-brands fa-shopify"></i> (<span id="cart-count">0</span>)
         </button>
     </header>
 
