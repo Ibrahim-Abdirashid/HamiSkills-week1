@@ -12,7 +12,7 @@ export const products = [
     name: "Tomato",
     category: "Vegetables",
     description:
-      "Yaanyadu waa nooc kamida Khudaarta waa midho inta badan jaale iyo green noqda.",
+      "Yaanyadu waa nooc kamida Kgithudaarta waa midho inta badan jaale iyo green noqda.",
     imageUrl: "./images/tomato.jpg", 
     price: 8.5,
   },
