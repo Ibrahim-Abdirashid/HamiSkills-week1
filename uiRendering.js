@@ -64,7 +64,7 @@ const renderProduct = (product) => {
     
     productElement.innerHTML = `
         <div class="product-image h-48">
-            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/333333?text=Sawir+Ma+Jiro';">
+            <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-full object-cover" onerror="this.onerror=null;>
         </div>
         <div class="p-4 text-center">
             <h3 class="text-xl font-bold mb-1 text-gray-800">${product.name}</h3>
