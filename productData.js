@@ -13,7 +13,7 @@ export const products = [
     category: "Vegetables",
     description:
       "Yaanyadu waa nooc kamida Khudaarta waa midho inta badan jaale iyo green noqda.",
-    imageUrl: "https://plus.unsplash.com/premium_photo-1661811820259-2575b82101bf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG9tYXRvfGVufDB8fDB8fHww", 
+    imageUrl: "./images/tomato.jpg", 
     price: 8.5,
   },
   {
