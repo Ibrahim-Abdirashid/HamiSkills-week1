@@ -21,7 +21,7 @@ export const products = [
     name: "Watermelon",
     category: "Fruits",
     description: "Qaraha waa mid macaan, cabitaanna loo isticmaalo.",
-    imageUrl: "https://placehold.co/400x300/699c30/ffffff?text=Watermelon", 
+    imageUrl: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0ZXJtZWxvbnxlbnwwfHwwfHx8MA%3D%3D", 
     price: 5.0,
   },
   {
@@ -29,7 +29,7 @@ export const products = [
     name: "Banana",
     category: "Fruits",
     description: "Muusku waa midho dhadhan fiican, si fududna loo cuno.",
-    imageUrl: "https://placehold.co/400x300/f5c300/333333?text=Banana", 
+    imageUrl: "https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFuYW5hfGVufDB8fDB8fHww", 
     price: 9.5,
   },
   {
@@ -37,7 +37,7 @@ export const products = [
     name: "Mango",
     category: "Fruits",
     description: "Cambuhu waa midho macaan mararka qaarna dhanaan yar yeesha.",
-    imageUrl: "https://placehold.co/400x300/ff9900/ffffff?text=Mango", 
+    imageUrl: "https://images.unsplash.com/photo-1605027990121-cbae9e0642df?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1hbmdvfGVufDB8fDB8fHww", 
     price: 2.75,
   },
   {
@@ -45,7 +45,7 @@ export const products = [
     name: "Papaya",
     category: "Fruits",
     description: "Babaygu waa nooc kamida fruits-ka, nafaqo badanna leh.",
-    imageUrl: "https://placehold.co/400x300/ff6f61/ffffff?text=Papaya", 
+    imageUrl: "https://images.unsplash.com/photo-1623492229905-ebc1202e8904?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFwYXlhfGVufDB8fDB8fHww", 
     price: 3.5,
   },
   {
@@ -54,7 +54,7 @@ export const products = [
     category: "Fruits",
     description:
       "Waa midho cas, macaanna leh, waddamada kulul badanaa kama baxo.",
-    imageUrl: "https://placehold.co/400x300/d50000/ffffff?text=Strawberry", 
+    imageUrl: "https://plus.unsplash.com/premium_photo-1675731118661-15dc54c11130?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3RyYXdiZXJyeXxlbnwwfHwwfHx8MA%3D%3D", 
     price: 6.5,
   },
   {
@@ -62,7 +62,7 @@ export const products = [
     name: "Salad Lettuce",
     category: "Vegetables",
     description: "Waa caleen la cuno, inta badan salad lagu sameeyo.",
-    imageUrl: "https://placehold.co/400x300/a8cc8c/333333?text=Lettuce", 
+    imageUrl: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2FsYWR8ZW58MHx8MHx8fDA%3D", 
     price: 2.0,
   },
   {
@@ -70,7 +70,7 @@ export const products = [
     name: "Apple Red",
     category: "Fruits",
     description: "Tufaaxa guduudan waa mid kamida midhaha ugu caansan.",
-    imageUrl: "https://placehold.co/400x300/cc0000/ffffff?text=Apple", 
+    imageUrl: "https://images.unsplash.com/photo-1669999207738-fcdb7103a6f3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjByZWR8ZW58MHx8MHx8fDA%3D", 
     price: 11.0,
   },
   {
@@ -78,7 +78,7 @@ export const products = [
     name: "Cucumber",
     category: "Vegetables",
     description: "Qajaarku waa midho qabow, salad-na lagu sameeyo.",
-    imageUrl: "https://placehold.co/400x300/007a3c/ffffff?text=Cucumber", 
+    imageUrl: "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3VjdW1iZXJ8ZW58MHx8MHx8fDA%3D", 
     price: 1.5,
   },
   {
@@ -86,7 +86,7 @@ export const products = [
     name: "Carrots",
     category: "Vegetables",
     description: "Karootadu waa xidid orange ah oo nafaqo badan leh.",
-    imageUrl: "https://placehold.co/400x300/ff8c00/ffffff?text=Carrots", 
+    imageUrl: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fycm90c3xlbnwwfHwwfHx8MA%3D%3D", 
     price: 1.2,
   },
 ];
